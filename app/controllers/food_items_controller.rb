@@ -25,6 +25,7 @@ class FoodItemsController < ApplicationController
   # POST /food_items.json
   def create
     @food_item = FoodItem.new(food_item_params)
+    @food_item.picture = params[:food_item][:picture]
 
     respond_to do |format|
       if @food_item.save
